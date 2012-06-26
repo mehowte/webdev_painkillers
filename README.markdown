@@ -2,6 +2,8 @@
 
 Example application from lightning talk which happened during [Amusing Workshops #1](https://www.facebook.com/events/349032585170198/)
 
+See it [here](http://mehowte.github.com/webdev_painkillers/)
+
 ##How to install
 
 Simply clone or download the repository from github.
