@@ -25,10 +25,11 @@ window.onload = function () {
   // hmm I wonder if this 'logo' thing have any connection to the one in html file...
   var paper = Raphael('logo', 200, 200);
   Raphael.registerFont( window.caviarDreams );
+  Raphael.registerFont( window.lato );
 
 
   var circle = paper.circle(100, 100, logoRadius1).attr({ fill : logoColor1, stroke: logoColor1});
-  var text = paper.print(70, 80, logoText, paper.getFont("Caviar Dreams"), 30, 'baseline');
+  var text = paper.print(70, 80, logoText, paper.getFont("Lato"), 30, 'baseline');
   var textGlow = text.glow({color: textColor, opacity: textGlowOpacity1});
   text.attr({fill: textColor});
   simulateLink(circle, webmuses_url);
