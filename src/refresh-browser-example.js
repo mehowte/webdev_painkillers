@@ -29,11 +29,27 @@ window.onload = function () {
 
 
   var circle = paper.circle(100, 100, logoRadius1).attr({ fill : logoColor1, stroke: logoColor1});
-  var text = paper.print(70, 80, logoText, paper.getFont("Lato"), 30, 'baseline');
-  var textGlow = text.glow({color: textColor, opacity: textGlowOpacity1});
-  text.attr({fill: textColor});
+
+  var part1 = paper.print(65, 80, "WEB", paper.getFont("Lato"), 30, 'baseline', 0.2);
+  var part2 = paper.print(65, 110, "MUS", paper.getFont("Lato"), 30, 'baseline', 0.2);
+  var part3 = paper.print(70, 140, "#", paper.getFont("Lato"), 30, 'baseline');
+  var part4 = paper.print(100, 140, "ES", paper.getFont("Lato"), 30, 'baseline', 0.2);
+
+
+  var part1Glow = part1.glow({color: textColor, opacity: textGlowOpacity2});
+  var part2Glow = part2.glow({color: textColor, opacity: textGlowOpacity1});
+  var part3Glow = part3.glow({color: textColor, opacity: textGlowOpacity1});
+  var part4Glow = part4.glow({color: textColor, opacity: textGlowOpacity1});
+
+  part1.attr({fill: textColor});
+  part2.attr({fill: textColor});
+  part3.attr({fill: textColor});
+  part4.attr({fill: textColor});
   simulateLink(circle, webmuses_url);
-  simulateLink(text, webmuses_url);
+  simulateLink(part1, webmuses_url);
+  simulateLink(part2, webmuses_url);
+  simulateLink(part3, webmuses_url);
+  simulateLink(part4, webmuses_url);
 
 
   // Creating looped animation is simple. We need to create two functions and make sure
@@ -42,12 +58,18 @@ window.onload = function () {
   // You can try to add more cycles to make more interesting logo animations.
   function animationCycle1() { 
     circle.animate({r: logoRadius1, fill: logoColor1, stroke: logoColor1}, animationCycleLength1, animationCycle2);
-    textGlow.animate({opacity: textGlowOpacity1}, animationCycleLength1);
+    part1Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part2Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part3Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part4Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
   }
 
   function animationCycle2() {
     circle.animate({r: logoRadius2, fill: logoColor2, stroke: logoColor2}, animationCycleLength2, animationCycle1);
-    textGlow.animate({opacity: textGlowOpacity2}, animationCycleLength2);
+    part1Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
+    part2Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
+    part3Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
+    part4Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
   }
   animationCycle2();
 
