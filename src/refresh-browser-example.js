@@ -1,8 +1,7 @@
 window.onload = function () {
   var webmuses_url = "http://webmus.es";
-  var logoText = "WEB\nMUS\n#ES"; 
 
-  var logoColor1 = '#40bdae';
+  var logoColor1 = '#50cdbe';
   var logoColor2 = '#60ddce';
   var logoRadius1 = 65;
   var logoRadius2 = 70;
@@ -36,7 +35,7 @@ window.onload = function () {
   var part4 = paper.print(100, 140, "ES", paper.getFont("Lato"), 30, 'baseline', 0.2);
 
 
-  var part1Glow = part1.glow({color: textColor, opacity: textGlowOpacity2});
+  var part1Glow = part1.glow({color: textColor, opacity: textGlowOpacity1});
   var part2Glow = part2.glow({color: textColor, opacity: textGlowOpacity1});
   var part3Glow = part3.glow({color: textColor, opacity: textGlowOpacity1});
   var part4Glow = part4.glow({color: textColor, opacity: textGlowOpacity1});
@@ -58,18 +57,18 @@ window.onload = function () {
   // You can try to add more cycles to make more interesting logo animations.
   function animationCycle1() { 
     circle.animate({r: logoRadius1, fill: logoColor1, stroke: logoColor1}, animationCycleLength1, animationCycle2);
-    part1Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
-    part2Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
-    part3Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
-    part4Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
-  }
-
-  function animationCycle2() {
-    circle.animate({r: logoRadius2, fill: logoColor2, stroke: logoColor2}, animationCycleLength2, animationCycle1);
     part1Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
     part2Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
     part3Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
     part4Glow.animate({opacity: textGlowOpacity1}, animationCycleLength2);
+  }
+
+  function animationCycle2() {
+    circle.animate({r: logoRadius2, fill: logoColor2, stroke: logoColor2}, animationCycleLength2, animationCycle1);
+    part1Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part2Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part3Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
+    part4Glow.animate({opacity: textGlowOpacity2}, animationCycleLength1);
   }
   animationCycle2();
 
